@@ -21,21 +21,16 @@ def main():
             if event.type == pg.QUIT: return
         key_lst = pg.key.get_pressed()
         #print(key_lst[pg.K_UP],key_lst[pg.K_DOWN],key_lst[pg.K_LEFT],key_lst[pg.K_RIGHT])
-        dx, dy = 0,0
+        move_x, move_y = -1, 0  # デフォルトで左に移動
 
-        if key_lst[pg.K_UP]:
-            dy -= 1
-            dx -= 1
-        if key_lst[pg.K_DOWN]:
-            dy += 1
-            dx -= 1
-        if key_lst[pg.K_LEFT]:
-            dx -= 1
-        if key_lst[pg.K_RIGHT]:
-            dx += 1
-        if dx == 0 and dy == 0:
-            dx = -1
-        kk_rct.move_ip(dx, dy)
+        if key_lst[pg.K_UP]:  # 上矢印キーが押されたら
+            move_y = -1
+        if key_lst[pg.K_DOWN]:  # 下矢印キーが押されたら
+            move_y = 1
+        if key_lst[pg.K_RIGHT]:  # 右矢印キーが押されたら
+            move_x = 1
+
+        kk_rct.move_ip(move_x, move_y)
 
 
 
