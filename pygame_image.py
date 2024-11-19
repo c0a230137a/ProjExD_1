@@ -13,18 +13,17 @@ def main():
     kk_img = pg.image.load("fig/3.png")  # こうかとん画像
     kk_img = pg.transform.flip(kk_img, True, False)  # 左右反転
     kk_rct = kk_img.get_rect()  # Rectで管理
-    kk_rct.topleft = (300, 200)  # 横300, 縦200の位置に配置
-
+    kk_rct.topleft = (300, 200)  # 横300, 縦200の位置に配置 
     tmr = 0
     while True:
         for event in pg.event.get():
             if event.type == pg.QUIT: return
 
-        screen.blit(bg_img, [0, 0]) #screeSufeces
+        screen.blit(bg_img, [-tmr, 0]) #screeSufeces
         screen.blit(kk_img, [300, 200])
         pg.display.update()
         tmr += 1        
-        clock.tick(10)
+        clock.tick(200)
 
 
 if __name__ == "__main__":
