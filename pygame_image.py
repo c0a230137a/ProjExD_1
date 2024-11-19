@@ -15,7 +15,7 @@ def main():
     kk_img = pg.transform.flip(kk_img, True, False)  # 左右反転
     kk_rct = kk_img.get_rect()  # Rectで管理
     kk_rct.center = 300, 200 # 横300, 縦200の位置に配置 
-    tmr = 0
+    tmr = 1
     while True:
         for event in pg.event.get():
             if event.type == pg.QUIT: return
